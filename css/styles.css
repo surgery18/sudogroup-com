@@ -72,6 +72,13 @@ body {
     -o-animation: fadeInAndUp 4s; /* Opera */
 }
 
+.intro-scroll.fade-in {
+  animation: fadeIn 1s infinite;
+    -moz-animation: fadeIn 1s infinite; /* Firefox */
+    -webkit-animation: fadeIn 1s infinite; /* Safari and Chrome */
+    -o-animation: fadeIn 1s infinite; /* Opera */
+}
+
 .intro {
   height: 60vh;
   margin: 10vh 0 30vh 0;
@@ -91,9 +98,34 @@ body {
   top: 65vh;
 }
 
+.intro-scroll {
+  font-size: 4em;
+  position: fixed;
+  bottom: -2vh;
+  width: 100%;
+  color: #ddd;
+  text-decoration: blink;
+  text-align: center;
+}
+
 @media screen and (max-width: 654px) {
-  .intro h2 {
+  .intro h2,
+  .intro-scroll {
     font-size: 3em;
+  }
+}
+
+@media screen and (max-height: 524px) {
+  .intro h2,
+  .intro-scroll {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-height: 378px) {
+  .intro h2,
+  .intro-scroll {
+    font-size: 2em;
   }
 }
 
