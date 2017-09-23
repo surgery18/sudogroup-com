@@ -1,7 +1,7 @@
-var nav = $(".nav-wrapper");
+var nav = $("nav");
 
 $(window).scroll(function () {
   if( $(this).scrollTop() > 1 ) {
-    nav.addClass("nav-wrapper-scrolled");
+    nav.addClass("fixed-top");
   }
 });
