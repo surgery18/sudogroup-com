@@ -1,0 +1,272 @@
+/* =============================================
+ *
+ *   FIXED RESPONSIVE NAV
+ *
+ *   (c) 2017 @sugogroup
+ *   https://www.sudogroup.com
+ *
+ *   Free to use under the MIT License.
+ *
+ * ============================================= */
+
+body, section, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, dl, dt, dd, ol, ul, li, hr,
+fieldset, form, label, legend, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section,
+summary, hgroup {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+
+/* ------------------------------------------
+  RESPONSIVE INTRO STYLES
+--------------------------------------------- */
+
+@font-face {
+  font-family: "Uptown";
+  src:
+      url('../fonts/Uptown__.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { /* Firefox */ from { opacity:0; } to { opacity:1; } }
+@-webkit-keyframes fadeIn { /* Safari and Chrome */ from { opacity:0; } to { opacity:1; } }
+@-o-keyframes fadeIn { /* Opera */ from { opacity:0; } to { opacity: 1; } }
+
+@keyframes fadeInAndUp { from { opacity:0; transform: translateY(100%); } to { opacity:1; transform: translateY(0%);} }
+@-moz-keyframes fadeInAndUp { /* Firefox */ from { opacity:0; transform: translateY(100%); } to { opacity:1; transform: translateY(0%); } }
+@-webkit-keyframes fadeInAndUp { /* Safari and Chrome */ from { opacity:0; transform: translateY(100%); } to { opacity:1; transform: translateY(0%); } }
+@-o-keyframes fadeInAndUp { /* Opera */ from { opacity:0; transform: translateY(100%); } to { opacity: 1; transform: translateY(0%); } }
+
+.fade-in {
+  animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s; /* Firefox */
+    -webkit-animation: fadeIn 3s; /* Safari and Chrome */
+    -o-animation: fadeIn 3s; /* Opera */
+}
+
+.fade-in-and-up {
+  animation: fadeInAndUp 4s;
+    -moz-animation: fadeInAndUp 4s; /* Firefox */
+    -webkit-animation: fadeInAndUp 4s; /* Safari and Chrome */
+    -o-animation: fadeInAndUp 4s; /* Opera */
+}
+
+.intro {
+  height: 60vh;
+  margin: 10vh 0 30vh 0;
+  background-color: white;
+  background: url('../images/logo-icon-xlarge.png') no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+.intro h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Uptown, sans-serif;
+  font-size: 5em;
+  color: #636363;
+  position: relative;
+  top: 65vh;
+}
+
+@media screen and (max-width: 654px) {
+  .intro h2 {
+    font-size: 3em;
+  }
+}
+
+
+/* ------------------------------------------
+  ANCHOR LINK STYLES
+--------------------------------------------- */
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -80px;
+  visibility: hidden;
+}
+
+
+/* ------------------------------------------
+  RESPONSIVE NAVIGATION BAR STYLES
+--------------------------------------------- */
+
+.nav-wrapper {
+  position: relative;
+  background: white;
+  height: 80px;
+  z-index: 999;
+  margin-bottom: -80px;
+  box-shadow: 0 2px 3px rgba(0,0,0,.4);
+}
+
+.nav-wrapper-scrolled {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav-main {
+  text-align: center;
+}
+
+.nav-main a {
+  font-size: .9em;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #444135;
+  display: inline-block;
+  margin: 24px 12px;
+}
+
+.nav-main a:hover {
+  color: #636363;
+  border-top: 2px solid #636363;
+  padding-top: 10px;
+}
+
+.nav-selected {
+  border-top: 2px solid #eb764d;
+  padding-top: 10px;
+  color: #eb764d;
+}
+
+.logo-wrapper {
+  max-height: 60px;
+  max-width: 215px;
+  display: block;
+}
+
+.logo-wrapper .logo {
+  max-width: 215px;
+}
+
+.contact-wrapper {
+  min-width: 185px;
+  max-width: 215px;
+}
+
+.contact-wrapper p {
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #eb764d;
+  display: inline-block;
+  margin: 17px 0;
+}
+
+.logo-wrapper,
+.contact-wrapper {
+  margin: 10px;
+}
+
+.top-menu-wrapper,
+.contact-wrapper {
+  display: block;
+}
+
+.contact-wrapper,
+.side-menu-wrapper {
+  text-align: right;
+}
+
+.side-menu-wrapper {
+  display: none;
+}
+
+.side-menu-wrapper a {
+  font-family: Uptown, sans-serif;
+  font-size: 2em;
+  color: #636363;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 15px 10px;
+  text-shadow: 0.03em 0.02em rgba(0,0,0,.4);
+}
+
+.side-menu-wrapper a:hover {
+  /*color: #eb764d;*/
+  text-shadow: none;
+}
+
+@media screen and (max-width: 954px) {
+  .top-menu-wrapper,
+  .contact-wrapper {
+    display: none;
+  }
+
+  .side-menu-wrapper {
+    display: block;
+  }
+}
+
+
+/* ------------------------------------------
+  TEMP MAIN CONTENT
+--------------------------------------------- */
+
+.main {
+  position: relative;
+  background: white;
+  padding-top: 80px;
+}
+
+.main h1 {
+  font-family: Uptown, sans-serif;
+  text-align: center;
+  color: #636363;
+}
+
+.main .orange {
+  background-color: #ee770d;
+  color: black;
+}
+
+.main .lt-grey {
+  background-color: #f5f6f7;
+  color: black;
+}
+
+.main .dk-grey {
+  background-color: #636363;
+  color: white;
+}
+
+.main .row {
+  padding: 25px 10px;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+.alignright {
+  text-align: right;
+}
